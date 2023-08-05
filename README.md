@@ -1,11 +1,9 @@
-# Cassandra_Cluster_Docker
-
 
 <body>
     <h1>Cassandra Cluster with Docker Compose</h1>
     <p>This repository contains the necessary files to set up a Cassandra cluster using Docker Compose.</p>
 
-    <h2>Prerequisites</h2>
+<h2>Prerequisites</h2>
 <p>Before you begin, make sure you have Docker and Docker Compose installed on your system.</p>
 <ul>
     <li><a href="https://docs.docker.com/engine/install/">Docker Installation Guide</a></li>
