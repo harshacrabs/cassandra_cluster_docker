@@ -1,0 +1,37 @@
+version: '3'
+services:
+  node-1:
+    image: cassandra:latest
+    ports:
+      - 9042:9042
+    volumes:
+      - ./data_node-1:/var/lib/cassandra
+    environment:
+      CASSANDRA_CLUSTER_NAME: my-cluster
+      CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
+
+  node-2:
+    image: cassandra:latest
+    ports:
+      - 9043:9042
+    volumes:
+      - ./data_node-2:/var/lib/cassandra
+    depends_on:
+      - node-1
+    environment:
+      CASSANDRA_SEEDS: node-1
+      CASSANDRA_CLUSTER_NAME: my-cluster
+      CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
+
+  node-3:
+    image: cassandra:latest
+    ports:
+      - 9044:9042
+    volumes:
+      - ./data_node-3:/var/lib/cassandra
+    depends_on:
+      - node-1
+    environment:
+      CASSANDRA_SEEDS: node-1
+      CASSANDRA_CLUSTER_NAME: my-cluster
+      CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
