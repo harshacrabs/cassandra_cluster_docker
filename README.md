@@ -16,7 +16,12 @@
 <h3>Build the Image</h3>
 <p>To build the custom Cassandra image, run the following command in the same directory as the Dockerfile:</p>
 <code>docker build -t custom-cassandra .</code>
-<p>This will create an image with the tag <code>custom-cassandra</code> that can be used in the <code>docker-compose.yaml</code> file.</p>
+<p>This will create an image with the tag <code>custom-cassandra</code> </p>
+
+<h3>Run the container</h3>
+<p>To run the Cassandra container, run the following command in the same directory as the Dockerfile:</p>
+<code>docker run -d --name cassandra custom-cassandra </code>
+<p>This will create a container with the name cassandra.</p>
 
 <h2>docker-compose.yaml</h2>
 <p>The <code>docker-compose.yaml</code> file describes the Cassandra cluster configuration with three nodes. Each node is running a separate container, and the containers are connected to form a cluster.</p>
